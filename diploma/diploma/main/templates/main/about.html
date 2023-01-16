@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+{% block title%}
+Страница обо мне
+{% endblock %}
+
+{% block content %}
+    <h1> Главная страница</h1>
+    {% for el in blog%}
+<!--    {{el.photo}}-->
+
+<img src="{{el.photo.url}}" alt="альтернативный текст">
+    {{el.title}}
+    <br>
+    {%endfor%}
+{% endblock %}
+
