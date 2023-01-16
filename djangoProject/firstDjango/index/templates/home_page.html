@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+<!--это наследование extends-->
+{% block title %}{% endblock %}
+{% block sidebar %}
+ <ul>
+     <li><b href="/">My homepage</b></li>
+     <!--<li><a href="/blog/">Blog</a></li>-->
+ </ul>
+{% endblock %}
+
+
+{% block content %}
+<h1>OH,MY GOD!!!</h1>
+<p>{{ text }}</p>
+
+{#{% for story in story_list %}#}
+{#<h2>#}
+{#  <a href="{{ story.get_absolute_url }}">#}
+{#    {{ story.headline|upper }}#}
+{#  </a>#}
+{#</h2>#}
+{#<p>{{ story.tease|truncatewords:"100" }}</p>#}
+{#{% endfor %}#}
+
+{% endblock %}

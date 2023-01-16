@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+{% block title%}
+{{title}}
+{% endblock %}
+
+{% block content %}
+    <h1> Главная страница</h1>
+    {% for el in timetable%}
+    {{el.days_of_the_week}}
+    {{el.task}}
+    <br>
+
+    {%endfor%}
+
+
+{% endblock %}
+
+

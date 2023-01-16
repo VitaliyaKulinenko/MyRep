@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+<!--это наследование extends-->
+{% block title %}All coders{% endblock %}
+{% block sidebar %}
+ <ul>
+     <li><b href="/">ABOUT</b></li>
+     <!--<li><a href="/blog/">Blog</a></li>-->
+ </ul>
+{% endblock %}
+
+
+{% block content %}
+<h1>Coders</h1>
+<p></p>
+
+{% for el in data %}#}
+    <p> {{el.name}} </p>
+    <p> {{el.surname}} </p>
+    <p> {{el.high.education}} </p>
+    <p> {{el.age}} </p>
+
+{#{% endfor %}#}
+
+
+{% endblock %}
