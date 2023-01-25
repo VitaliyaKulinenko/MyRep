@@ -29,6 +29,19 @@ class Blog(models.Model):
         verbose_name_plural = "Photos"
 
 
+class Registration(models.Model):
+    user_name = models.CharField(max_length=20)
+    email = models.CharField(max_length=50, unique=True)
+    password = models.CharField(max_length=300)
+    is_admin = models.BooleanField(default=False)
+
+
+
+    def __repr__(self):
+        return f'{self.user_name}'
+
+
 
     # def get_absolute_url(self):
     #     return reverse('post', kwargs={post_id}:self.pk})
+

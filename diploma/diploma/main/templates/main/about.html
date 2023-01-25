@@ -4,12 +4,13 @@
 {% endblock %}
 
 {% block content %}
-    <h1> Главная страница</h1>
+    <h1> Here you can see more information about me and my career</h1>
     {% for el in blog%}
 <!--    {{el.photo}}-->
 
-<img src="{{el.photo.url}}" alt="альтернативный текст">
+<img src="{{el.photo.url}}" width="200" height="180" >
     {{el.title}}
+    {{el.content}}
     <br>
     {%endfor%}
 {% endblock %}

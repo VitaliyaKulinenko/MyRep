@@ -1,12 +1,15 @@
-<!--{% extends 'main/base.html' %}-->
+{% extends 'main/base.html' %}
+{% block content%}
 
-<!--{% block content %}-->
-<!--<h1>{{title}}</h1>-->
 
-<!--<form method="post">-->
-<!--    {% csrf_token %}-->
-<!--    {{ form.as_p}}-->
-<!--    <button type="submit">Registration</button>-->
-<!--</form>-->
+<h1>Registration form</h1>
 
-<!--{% endblock %}-->
+<div>
+<form method="post" name="form">
+        {% csrf_token %}
+    {{ form.as_div }}
+    <br />
+    <button type="submit">Registrate</button>
+</form>
+</div>
+{% endblock %}
