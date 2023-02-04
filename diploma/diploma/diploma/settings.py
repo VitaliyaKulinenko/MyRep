@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'debug_toolbar',
     'main',
-    'rest_framework_swagger',
+    # 'rest_framework_swagger',
 
 ]
 
@@ -123,7 +123,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 def show_toolbar(request):
-    return True
+    return False
 
 
 DEBUG_TOOLBAR_CONFIG = {

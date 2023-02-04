@@ -3,11 +3,16 @@
 {% block content%}
 <h1>{{title}}</h1>
 
-<form action="{% url 'add_post' %}" method="post">
+<form method="post">
     {% csrf_token %}
     {{ form.as_p}}
     <button type="submit">Add</button>
 </form>
-
-
+{% for el in reviews%}
+    {{el.title}}
+    {{el.content}}
+    <br>
+    {%endfor%}
 {% endblock %}
+
+
