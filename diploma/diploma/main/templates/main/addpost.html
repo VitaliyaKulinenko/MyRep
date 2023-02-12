@@ -1,13 +1,8 @@
 {% extends 'main/base.html' %}
-
+{% block title %} Форма для отзывов {% endblock %}
 {% block content%}
-<h1>{{title}}</h1>
+<a href='formaddpost'><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Оставить отзыв </button></li></a>
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p}}
-    <button type="submit">Add</button>
-</form>
 {% for el in reviews%}
     {{el.title}}
     {{el.content}}

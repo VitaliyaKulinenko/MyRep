@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}
+{% block title %} Форма для отзывов {% endblock %}
+{% block content%}
+<h1>Форма для отзывов</h1>
+<div>
+<form method="post">
+    {% csrf_token %}
+    {{form.title}}<br>
+    {{form.content}}<br>
+    <span>{{error}}</span>
+    <button class="btn btn-success" type="submit">Опубликовать</button>
+</form>
+</div>
+
+{% endblock %}

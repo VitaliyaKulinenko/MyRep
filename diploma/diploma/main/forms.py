@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from django.forms import ModelForm, Form, CharField, PasswordInput,ValidationError
+from django.forms import ModelForm, Form, CharField, PasswordInput, ValidationError, TextInput, DateTimeInput, Textarea
 
 from .models import *
 
@@ -19,11 +19,26 @@ class UserForm(ModelForm):
     #     else:
     #         raise ValidationError ("Don't understand You")
 
-class PostForm(ModelForm):
 
+class ReviewsForm(ModelForm):
     class Meta:
-        model = Blog
+        model = Reviews
         fields = ['title', 'content']
+
+        widgets = {
+            "title": TextInput(attrs={
+                'class': 'form-control',
+                'placeholder':'Заголовок'
+
+            }),
+            "content": Textarea(attrs={
+                'class': 'form-control',
+                'placeholder': 'Текст отзыва'
+
+            }),
+
+
+        }
 
 
 class LoginForm(Form):

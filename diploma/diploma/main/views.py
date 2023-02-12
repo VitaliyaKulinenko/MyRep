@@ -9,6 +9,7 @@ from django.views.generic import CreateView
 from .forms import *
 from .models import Timetable, Blog
 # from rest_framework_swagger.views import get_swagger_view
+from .forms import *
 
 
 # @cache_page(timeout=3600)
@@ -68,10 +69,27 @@ def enter(request):
 
 
 def addpost(request):
-    form = PostForm()
+    # form = PostForm()
 
     reviews = Reviews.objects.all()
-    return render(request, 'main/addpost.html', {'form': form, 'title': 'Leave your feedback'})
+    return render(request, 'main/addpost.html', {'title': 'Leave your feedback'})
+
+
+def formaddpost(request):
+    error = ''
+    if request.method == 'POST':
+        form = ReviewsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('review')
+        else:
+            error = 'Неверно заполнено, попробуйте еще раз'
+    form = ReviewsForm()
+    data = {
+        'form': form
+    }
+    return render(request, 'main/formaddpost.html', data)
+
 
 
 

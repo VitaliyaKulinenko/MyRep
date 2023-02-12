@@ -11,5 +11,6 @@ urlpatterns = [
     path('registration', views.sign_up),
     path('enter', views.enter),
     path('contacts', views.contacts),
-    path('add_post', views.addpost),
+    path('add_post', views.addpost, name='review'),
+    path('formaddpost', views.formaddpost),
 ]
