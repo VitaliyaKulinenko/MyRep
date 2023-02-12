@@ -28,7 +28,7 @@ class ReviewsForm(ModelForm):
         widgets = {
             "title": TextInput(attrs={
                 'class': 'form-control',
-                'placeholder':'Заголовок'
+                'placeholder': 'Заголовок'
 
             }),
             "content": Textarea(attrs={

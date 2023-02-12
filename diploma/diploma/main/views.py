@@ -40,7 +40,7 @@ def sign_up(request):
         form = UserForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('about-me')
+            return redirect('about')
     else:
         form = UserForm()
     return render(request, 'main/register.html', {'form': form})
@@ -55,9 +55,9 @@ def enter(request):
             user = authenticate(password=data['password'], username=data['username'])
             if user is not None:
                 login(request, user)
-                return redirect('about-me')
+                return redirect('about')
             else:
-                return redirect('enter')
+                return redirect('ent')
         else:
             error = 'ERROR!'
     else:
@@ -70,9 +70,8 @@ def enter(request):
 
 def addpost(request):
     # form = PostForm()
-
     reviews = Reviews.objects.all()
-    return render(request, 'main/addpost.html', {'title': 'Leave your feedback'})
+    return render(request, 'main/addpost.html', {'title': 'IKboxing', 'reviews': reviews})
 
 
 def formaddpost(request):
@@ -86,7 +85,8 @@ def formaddpost(request):
             error = 'Неверно заполнено, попробуйте еще раз'
     form = ReviewsForm()
     data = {
-        'form': form
+        'form': form,
+        'error': error
     }
     return render(request, 'main/formaddpost.html', data)
 

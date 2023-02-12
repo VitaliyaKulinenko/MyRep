@@ -2,12 +2,15 @@
 {% block title %} Форма для отзывов {% endblock %}
 {% block content%}
 <a href='formaddpost'><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Оставить отзыв </button></li></a>
-
-{% for el in reviews%}
-    {{el.title}}
-    {{el.content}}
-    <br>
+<div class = "features">
+    <h1>Отзывы<h1>
+    {% for el in reviews%}
+        <div class = "alert alert-warning">
+            <h3>{{el.title}}<h3>
+            <h3>{{el.content}}<h3>
+        </div>
     {%endfor%}
+</div>
 {% endblock %}
 
 

@@ -7,9 +7,9 @@ from . import views
 
 urlpatterns = [
     path('', views.index),
-    path('about-me', views.about),
+    path('about-me', views.about, name='about'),
     path('registration', views.sign_up),
-    path('enter', views.enter),
+    path('enter', views.enter, name='ent'),
     path('contacts', views.contacts),
     path('add_post', views.addpost, name='review'),
     path('formaddpost', views.formaddpost),
