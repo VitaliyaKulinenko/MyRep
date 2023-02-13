@@ -1,11 +1,10 @@
 {% extends 'main/base.html' %}
-{% block title%}
-Страница обо мне
+
 {% block content %}
-<h1>Title</h1>
+<h1>Enter</h1>
 
 <div>
-<form method="post" name="enter">
+<form method="post">
     {% if error %}<b>{{ error }}</b>{% endif %}
     {% csrf_token %}
     {{ form.as_div }}

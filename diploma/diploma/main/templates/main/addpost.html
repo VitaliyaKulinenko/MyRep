@@ -1,9 +1,9 @@
 {% extends 'main/base.html' %}
-{% block title %} Форма для отзывов {% endblock %}
+{% block title %} Leave your feedback {% endblock %}
 {% block content%}
-<a href='formaddpost'><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Оставить отзыв </button></li></a>
+<a href='formaddpost'><li><button class="btn btn-info"><i class="fas fa-plus-circle"></i> leave feedback </button></li></a>
 <div class = "features">
-    <h1>Отзывы<h1>
+    <h1>Reviews<h1>
     {% for el in reviews%}
         <div class = "alert alert-warning">
             <h3>{{el.title}}<h3>

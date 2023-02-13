@@ -35,8 +35,6 @@ class Registration(models.Model):
     password = models.CharField(max_length=300)
     is_admin = models.BooleanField(default=False)
 
-
-
     def __repr__(self):
         return f'{self.user_name}'
 

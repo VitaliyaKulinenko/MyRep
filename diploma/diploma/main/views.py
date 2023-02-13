@@ -1,4 +1,6 @@
-from django.contrib.auth import authenticate, login
+from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
@@ -40,13 +42,13 @@ def sign_up(request):
         form = UserForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('about')
+            return redirect('home')
     else:
         form = UserForm()
     return render(request, 'main/register.html', {'form': form})
 
 
-def enter(request):
+def log_in(request):
     error = ''
     if request.method == "POST":
         form = LoginForm(request.POST)
@@ -55,17 +57,23 @@ def enter(request):
             user = authenticate(password=data['password'], username=data['username'])
             if user is not None:
                 login(request, user)
-                return redirect('about')
+                return redirect('home')
             else:
-                return redirect('ent')
+                return redirect('registration')
         else:
             error = 'ERROR!'
     else:
         form = LoginForm()
-    return render(request, 'main/register.html', {
+    return render(request, 'main/enter.html', {
         'form': form,
         'error': error,
     })
+
+
+
+def log_out(request):
+    logout(request)
+    return redirect('home')
 
 
 def addpost(request):

@@ -6,10 +6,10 @@ from . import views
 # from .views import RegisterUser
 
 urlpatterns = [
-    path('', views.index),
+    path('', views.index, name='home'),
     path('about-me', views.about, name='about'),
-    path('registration', views.sign_up),
-    path('enter', views.enter, name='ent'),
+    path('registration', views.sign_up, name='registration'),
+    path('enter', views.log_in, name='ent'),
     path('contacts', views.contacts),
     path('add_post', views.addpost, name='review'),
     path('formaddpost', views.formaddpost),
