@@ -25,8 +25,8 @@ class Blog(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = "Photo"
-        verbose_name_plural = "Photos"
+        verbose_name = "Фото"
+        verbose_name_plural = "Фото"
 
 
 class Registration(models.Model):
@@ -47,8 +47,8 @@ class Reviews(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = "Review"
-        verbose_name_plural = "Reviews"
+        verbose_name = "Отзыв"
+        verbose_name_plural = "Отзывы"
 
 
 

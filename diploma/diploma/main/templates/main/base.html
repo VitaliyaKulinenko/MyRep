@@ -7,18 +7,22 @@
 </head>
 <body>
 
-<body class="d-flex h-100 text-center text-bg-dark">
+<body bgcolor="#c0c0c0">
 <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
   <header class="mb-auto">
     <div>
       <h2 class="float-md-start mb-0">IKboxing</h2>
       <nav class="nav nav-masthead justify-content-center float-md-end">
 <!--        <a class="nav-link fw-bold py-1 px-2" href=""> Main </a>-->
-        <a class="nav-link fw-bold py-1 px-2" href="about-me"> About me </a>
-        <a class="nav-link fw-bold py-1 px-0" href="contacts"> Contacts </a>
-        <a class="nav-link fw-bold py-1 px-2" href="add_post"> Reviews </a>
-        <a class="nav-link fw-bold py-1 px-3" href="registration"> Registration</a>
-        <a class="nav-link fw-bold py-1 px-3" href="enter" > Enter </a>
+        <a class="btn btn-info px-2" href="about-me"> Блог</a>
+        <a class="btn btn-info px-0" href="contacts"> Контакты </a>
+        <a class="btn btn-info px-2" href="add_post"> Отзывы </a>
+        {%if request.user.is_authenticated %}
+          <li class="btn btn-info px-2"> {{user.username}} | <a href="exit"> Выход </a> </li>
+        {%else%}
+          <a class="btn btn-info px-3" href="registration"> Регистрация</a>
+          <a class="btn btn-info px-3" href="enter" > Войти </a>
+        {%endif%}
 <!--          <a href=<><button class="btn btn-info"><i class="fas fa-plus-circle"></i> Оставить отзыв </button></li></a>-->
 
       </nav>

@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'main',
     # 'rest_framework_swagger',
 
+
 ]
 
 MIDDLEWARE = [

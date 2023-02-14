@@ -1,14 +1,15 @@
 {% extends 'main/base.html' %}
 {% block title%}
-Страница обо мне
+Блог
 {% endblock %}
 
 {% block content %}
-    <h1> Here you can see more information about me and my career</h1>
+    <h1> Статьи/Новости/Заметки тренера</h1>
     {% for el in blog%}
-    <img src="{{el.photo.url}}" width="200" height="180">
-    {{el.title}}
-    {{el.content}}
+        <div class = "alert alert-warning">
+        <img src="{{el.photo.url}}" width="200" height="180">
+    <h3>{{el.title}}</h3>
+    <h6>{{el.content}}</h6>
     <br>
     {%endfor%}
 {% endblock %}

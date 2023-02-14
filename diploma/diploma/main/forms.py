@@ -14,7 +14,7 @@ class UserForm(ModelForm):
         widgets = {
             "username": TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Username'
+                'placeholder': 'Имя пользователя'
 
             }),
             "email": TextInput(attrs={
@@ -24,7 +24,7 @@ class UserForm(ModelForm):
             }),
             "password": TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'password'
+                'placeholder': 'Пароль'
             })
 
         }
@@ -48,12 +48,12 @@ class ReviewsForm(ModelForm):
         widgets = {
             "title": TextInput(attrs={
                 'class': 'form-control',
-                'placeholder': 'Your name'
+                'placeholder': 'Имя'
 
             }),
             "content": Textarea(attrs={
                 'class': 'form-control',
-                'placeholder': 'Review'
+                'placeholder': 'Текст отзыва'
 
             }),
 
@@ -62,8 +62,8 @@ class ReviewsForm(ModelForm):
 
 
 class LoginForm(Form):
-    username = CharField(label='Username')
-    password = CharField(label='Password', widget=PasswordInput())
+    username = CharField(label='Имя пользователя')
+    password = CharField(label='Пароль', widget=PasswordInput())
 
     def clean(self):
         data = self.cleaned_data

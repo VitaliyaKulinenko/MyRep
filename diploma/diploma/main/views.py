@@ -27,14 +27,8 @@ def about(request):
     return render(request, 'main/about.html', {'title': 'IKboxing', 'blog': blog})
 
 
-
-
-
-
-
-
 def contacts(request):
-    return HttpResponse("здесь будут контакты")
+    return render(request, 'main/contacts.html',  {'title': 'IKboxing'})
 
 
 def sign_up(request):

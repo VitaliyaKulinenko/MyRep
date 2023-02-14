@@ -10,7 +10,8 @@ urlpatterns = [
     path('about-me', views.about, name='about'),
     path('registration', views.sign_up, name='registration'),
     path('enter', views.log_in, name='ent'),
-    path('contacts', views.contacts),
+    path('exit', views.log_out, name='exit]'),
+    path('contacts', views.contacts, name='contacts'),
     path('add_post', views.addpost, name='review'),
     path('formaddpost', views.formaddpost),
 ]

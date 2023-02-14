@@ -6,3 +6,5 @@ admin.site.register(Timetable)
 admin.site.register(Blog)
 admin.site.register(Registration)
 admin.site.register(Reviews)
+
+
